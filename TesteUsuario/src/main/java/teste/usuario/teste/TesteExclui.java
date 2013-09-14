@@ -12,7 +12,7 @@ import teste.usuario.util.HibernateUtil;
 *
 * @author Josafá
 */
-public class TesteEsxclui {
+public class TesteExclui {
 
     public static void main(String[] args) {
         Session session = HibernateUtil.getSessionFactory().openSession();
