@@ -42,8 +42,8 @@ ALTER TABLE usuario
 
 -- ALTER TABLE tipo_usuario DROP COLUMN codigo;
 
-ALTER TABLE tipo_usuario ADD COLUMN codigo integer;
-ALTER TABLE tipo_usuario ALTER COLUMN codigo SET NOT NULL;
+--ALTER TABLE tipo_usuario ADD COLUMN codigo integer;
+--ALTER TABLE tipo_usuario ALTER COLUMN codigo SET NOT NULL;
 ALTER TABLE tipo_usuario ALTER COLUMN codigo SET DEFAULT nextval('tipo_usuario_codigo_seq'::regclass);
 
 
@@ -51,6 +51,6 @@ ALTER TABLE tipo_usuario ALTER COLUMN codigo SET DEFAULT nextval('tipo_usuario_c
 
 -- ALTER TABLE usuario DROP COLUMN codigo;
 
-ALTER TABLE usuario ADD COLUMN codigo integer;
-ALTER TABLE usuario ALTER COLUMN codigo SET NOT NULL;
+--ALTER TABLE usuario ADD COLUMN codigo integer;
+--ALTER TABLE usuario ALTER COLUMN codigo SET NOT NULL;
 ALTER TABLE usuario ALTER COLUMN codigo SET DEFAULT nextval('usuario_codigo_seq'::regclass);
