@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package teste.usuario.teste;
+package teste.usuario.testes;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,7 +10,7 @@ import teste.usuario.util.HibernateUtil;
 
 /**
  *
- * @author Josafá
+ * @author Josafï¿½
  */
 public class TesteConexao {
 

@@ -36,14 +36,13 @@ public class HibernateDAO<T> implements InterfaceDAO<T>{
     }
 
     public T getEntity(Serializable codigo) {
-        session.beginTransaction();
         T entitie = (T) session.get(classe, codigo);
-        session.getTransaction().commit();
         return entitie;
     }
 
     public List<T> getEntities() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<T> entities = session.createCriteria(classe).list();
+        return entities;
     }
     
     

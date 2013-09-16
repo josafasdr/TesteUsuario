@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package teste.usuario.teste;
+package teste.usuario.testes;
 
 import java.sql.Date;
 import java.util.Calendar;

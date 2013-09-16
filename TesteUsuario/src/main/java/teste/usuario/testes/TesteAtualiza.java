@@ -1,5 +1,5 @@
 
-package teste.usuario.teste;
+package teste.usuario.testes;
 
 import org.hibernate.Session;
 import teste.usuario.dao.HibernateDAO;
