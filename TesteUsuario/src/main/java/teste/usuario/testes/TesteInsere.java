@@ -22,10 +22,10 @@ public class TesteInsere {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-//            
-//            TipoUsuario tipoUsuario = new TipoUsuario();
-//            tipoUsuario.setNomeTipoUsuario("Aluno");
             
+//            TipoUsuario tipoUsuario = new TipoUsuario();
+//            tipoUsuario.setNomeTipoUsuario("Funcionario");
+//            
 //            HibernateDAO<TipoUsuario> tipoUsuarioDAO = new HibernateDAO<TipoUsuario>(session, TipoUsuario.class);            
 //            
 //            tipoUsuarioDAO.insere(tipoUsuario);
@@ -40,7 +40,7 @@ public class TesteInsere {
             Date horaParaGravar = new Date(System.currentTimeMillis());
             usuario.setHoraDoCadastro(horaParaGravar);
             
-            usuario.setTipoUsuarioCodigo(new TipoUsuario(5));
+            usuario.setTipoUsuarioCodigo(new TipoUsuario(2));
             
             HibernateDAO<Usuario> usuarioDAO = new HibernateDAO<Usuario>(session, Usuario.class);
             usuarioDAO.insere(usuario);
