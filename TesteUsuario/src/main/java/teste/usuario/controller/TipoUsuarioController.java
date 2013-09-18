@@ -2,6 +2,7 @@ package teste.usuario.controller;
 
 import java.util.List;
 import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +16,10 @@ import teste.usuario.util.HibernateUtil;
 @Controller
 public class TipoUsuarioController {
 
-//    private HibernateDAO<TipoUsuario> tipoUsuarioDAO;
-//    private Session session;
-//    private Class<TipoUsuario> classe;
+    @Autowired
+    private HibernateDAO<TipoUsuario> tipoUsuarioDAO;
+
     public TipoUsuarioController() {
-//        this.session = HibernateUtil.getSessionFactory().openSession();
-//        this.classe = TipoUsuario.class;
-//        this.tipoUsuarioDAO = new HibernateDAO<TipoUsuario>(session, classe);
     }
 
     @RequestMapping("formTipoUsuario")
@@ -31,22 +29,13 @@ public class TipoUsuarioController {
 
     @RequestMapping("insereTipoUsuario")
     public String insere(TipoUsuario tipoUsuario) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        //tipoUsuario.setNomeTipoUsuario("Funcionario");
-        HibernateDAO<TipoUsuario> tipoUsuarioDAO = new HibernateDAO<TipoUsuario>(session, TipoUsuario.class);
         tipoUsuarioDAO.insere(tipoUsuario);
-        session.getTransaction().commit();
-        return "tipousuario/lista";
+        return "ola";
     }
 
     @RequestMapping("listaTiposUsuario")
     public String lista(Model model) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        HibernateDAO<TipoUsuario> tipoUsuarioDAO = new HibernateDAO<TipoUsuario>(session, TipoUsuario.class);
-        List<TipoUsuario> tiposUsuario = tipoUsuarioDAO.getEntities();
-        session.getTransaction().commit();
+        List<TipoUsuario> tiposUsuario = tipoUsuarioDAO.getEntities(TipoUsuario.class);
         model.addAttribute("tiposUsuario", tiposUsuario);
         return "tipousuario/lista";
     }

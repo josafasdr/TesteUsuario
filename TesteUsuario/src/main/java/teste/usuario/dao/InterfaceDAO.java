@@ -19,7 +19,7 @@ public interface InterfaceDAO<T> {
     
     public void exclui(T entitie);
     
-    public T getEntity(Serializable codigo);
+    public T getEntity(Class<T> classe, Serializable codigo);
     
-    public List<T> getEntities();
+    public List<T> getEntities(Class<T> classe);
 }

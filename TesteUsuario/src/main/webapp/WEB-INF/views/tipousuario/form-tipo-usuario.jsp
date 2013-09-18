@@ -13,7 +13,7 @@
     </head>
     <body>
         <h3>Cadastrar Tipo de Usuario</h3>
-        <form action="insereTipoUsuario" method="GET">
+        <form action="insereTipoUsuario" method="post">
             Nome: <input type="text" name="nomeTipoUsuario" />
             <input type="submit" value="Enviar" />
         </form>
