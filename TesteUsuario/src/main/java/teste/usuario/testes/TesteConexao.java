@@ -14,17 +14,17 @@ import teste.usuario.util.HibernateUtil;
  */
 public class TesteConexao {
 
-    public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            
-            Transaction transaction = session.beginTransaction();
-            System.out.println("Conectou!");
-            transaction.commit();
-        } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
-        } finally {
-            session.close();
-        }
-    }
+//    public static void main(String[] args) {
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        try {
+//            
+//            Transaction transaction = session.beginTransaction();
+//            System.out.println("Conectou!");
+//            transaction.commit();
+//        } catch (Exception e) {
+//            System.out.println("Erro: " + e.getMessage());
+//        } finally {
+//            session.close();
+//        }
+//    }
 }

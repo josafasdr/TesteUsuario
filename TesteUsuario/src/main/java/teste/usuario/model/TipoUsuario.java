@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package teste.usuario.model;
 
 import java.io.Serializable;
@@ -13,23 +10,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-/**
- *
- * @author Josafá
- */
+/** @author Josafá */
 @Entity
 @Table(schema = "public", name = "tipo_usuario")
 @SequenceGenerator(name = "tipo_usuario_codigo_seq", sequenceName = "public.tipo_usuario_codigo_seq")
-//@NamedQueries({
-//    @NamedQuery(name = "TipoUsuario.findAll", query = "SELECT t FROM TipoUsuario t")})
 public class TipoUsuario implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "tipo_usuario_codigo_seq")
     @Basic(optional = false)

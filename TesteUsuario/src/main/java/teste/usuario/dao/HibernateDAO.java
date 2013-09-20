@@ -6,9 +6,10 @@ package teste.usuario.dao;
 
 import java.io.Serializable;
 import java.util.List;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -18,36 +19,38 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class HibernateDAO<T> implements InterfaceDAO<T>{
     
-    @Autowired
-    private Session session;
+    private SessionFactory sessionFactory;
 
-    public HibernateDAO() {
+    @Autowired
+    public HibernateDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    @Transactional
+    @Override
+    @Transactional(propagation=Propagation.REQUIRED,readOnly=false)
     public void insere(T entitie) {
-        session.save(entitie);
+        sessionFactory.getCurrentSession().save(entitie);
     }
 
     @Transactional
     public void atualiza(T entitie) {
-        session.update(entitie);
+        sessionFactory.getCurrentSession().update(entitie);
     }
 
     @Transactional
     public void exclui(T entitie) {
-        session.delete(entitie);
+        sessionFactory.getCurrentSession().delete(entitie);
     }
 
     @Transactional
     public T getEntity(Class<T> classe, Serializable codigo) {
-        T entitie = (T) session.get(classe, codigo);
+        T entitie = (T) sessionFactory.getCurrentSession().get(classe, codigo);
         return entitie;
     }
 
     @Transactional
     public List<T> getEntities(Class<T> classe) {
-        List<T> entities = session.createCriteria(classe).list();
+        List<T> entities = sessionFactory.getCurrentSession().createCriteria(classe).list();
         return entities;
     }
 }

@@ -16,20 +16,20 @@ import teste.usuario.util.HibernateUtil;
  */
 public class TesteGetEntity {
     
-     public static void main(String[] args) {
-        try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            
-            HibernateDAO<Usuario> usuarioDAO = new HibernateDAO<Usuario>(session, Usuario.class);
-            
-            Usuario usuario = usuarioDAO.getEntity(2);
-            
-            session.getTransaction().commit();
-            
-            System.out.println(usuario.getNome());
-        } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
-    }
+//     public static void main(String[] args) {
+//        try {
+//            Session session = HibernateUtil.getSessionFactory().openSession();
+//            session.beginTransaction();
+//            
+//            HibernateDAO<Usuario> usuarioDAO = new HibernateDAO<Usuario>(session, Usuario.class);
+//            
+//            Usuario usuario = usuarioDAO.getEntity(2);
+//            
+//            session.getTransaction().commit();
+//            
+//            System.out.println(usuario.getNome());
+//        } catch (Exception e) {
+//            System.out.println("Erro: " + e.getMessage());
+//        }
+//    }
 }
