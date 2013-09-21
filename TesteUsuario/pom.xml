@@ -96,11 +96,6 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>postgresql-9.1-901.jdbc4</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
@@ -224,6 +219,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
             <version>4.0.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.2-1003-jdbc4</version>
         </dependency>
     </dependencies>
 
